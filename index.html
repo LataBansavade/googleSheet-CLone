@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google-Sheet-Clone</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div id="navList">
+        <p>File</p>
+        <p>Edit</p>
+        <p>View</p>
+        <p>Insert</p>
+        <p>Format</p>
+        <p>Help</p>
+    </div>
+    <div id="options">
+        <div  class="menu"  >
+
+        <button id="copy" title="copy"><i class="fa-regular fa-copy fa-2xl" style="color: #000000;"></i></button>
+          <button id="paste" title="paste"><i class="fa-regular fa-paste fa-2xl" style="color: #000000;"></i></button>
+          <button id="cut" title="cut"><i class="fa-solid fa-scissors fa-2xl" style="color: #000000;"></i></button>
+
+
+
+            <select  id="fontFamily">
+                <option value="Courier New', Courier, monospace">Courier</option>
+                <option value="Verdana, Geneva, Tahoma, sans-serif">Verdana</option>
+                <option value="Georgia, 'Times New Roman', Times, serif">Georgia</option>
+                <option value="Arial, Helvetica, sans-serif">Arial</option>
+                <option value="Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Segoe UI</option>
+                <option value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Impact</option>
+            </select>
+            <select id="fontSize" >
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+               
+            </select>
+            <div id="bold" onclick="onClickBold(this)" >B</div>
+            <div id="italic" onclick="onClickItalic(this)" >I</div>
+            <div id="underlined" onclick="onClickUnderline(this)">U</div>
+
+            <!-- //////////////////////////////////////////////////////////////////// -->
+             <span>
+                <i class="fa-solid fa-align-left active-option TextAlign" data-value="start" onclick="onClickTextAlign(this)" style="color: #0c0d0d;"></i>
+            </span>
+             <span>
+                <i class="fa-solid fa-align-center TextAlign" data-value="center" onclick="onClickTextAlign(this)"  style="color: #0d0d0d;"></i>
+            </span>
+             <span>
+                <i class="fa-solid fa-align-right TextAlign" data-value="end"  onclick="onClickTextAlign(this)" style="color: #0a0a0a;"></i>
+            </span>
+     <!-- ////////////////////////////////////////////////////////////////////// -->
+             <div id="text-Color">
+                <label for="color-picker">
+                   <span><i class="fa-solid fa-paintbrush" style="color: #080808;"></i></span> 
+                </label>
+                <input 
+                onchange="onChangetextcolor(this)"
+                 type="color" id="color-picker" 
+                 style="width: 0; height: 0;">
+             </div>
+
+             <div id="bg-color">
+                <label for="bgcolor-picker">
+                   <span><i class="fa-solid fa-palette" style="color: #0d0d0d;"></i></span> 
+                </label>
+                <input 
+                onchange=" onChangeBackgroundcolor(this)" 
+                type="color" id="bgcolor-picker" 
+                style="width: 0; height: 0;">
+             </div>
+             
+
+        </div>
+        <span id="active-cell">null</span>
+    </div>
+    <main style="
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
+   ">
+    <div id="header">
+        <b style="position: sticky; left: 0px; top: 0px; background-color: white;">S.No</b>
+    </div>
+   <section id="body">
+    <div class="row">
+
+    </div>
+   </section>
+</main>
+
+   <script src="./options.js"></script>
+    <script src="./script.js"></script>
+   
+</body>
+</html>
